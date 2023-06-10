@@ -16,7 +16,7 @@ app.use(
 );
 
 // here we serve the index.html page
-app.get("/articles", (req, res, next) => {
+app.get("*/", (req, res, next) => {
   res.json({ data: "dataaaa" });
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
