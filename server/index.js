@@ -5,14 +5,16 @@ const { getPostById } = require("./stub/posts");
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const indexPath = path.resolve("__dirname", "..", "build", "index.html");
+const indexPath = "https://fazzysyedshah.vercel.app/index.html";
 
 // static resources should just be served as they are
 
 app.use(express.json());
 // app.use(cors());
 app.use(
-  express.static(path.resolve(__dirname, "..", "build"), { maxAge: "30d" })
+  express.static(path.resolve("https://fazzysyedshah.vercel.app"), {
+    maxAge: "30d",
+  })
 );
 
 // here we serve the index.html page
